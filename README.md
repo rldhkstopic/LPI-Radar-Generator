@@ -38,7 +38,7 @@ The generated data for each waveform is saved as complex I/Q data in Numpy `.npy
 3. **Noisy Signal**: Original signal combined with AWGN.
 4. **Power Normalized Noisy Signal**: Noisy signal that undergoes power normalization.
 
-## STFT Visualization for Verification
+## STFT Visualization for Verification (100MHz)
 
 To verify the signal generation process, Short-Time Fourier Transform (STFT) images are provided for each signal type.
 
