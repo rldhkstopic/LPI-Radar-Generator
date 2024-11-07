@@ -6,19 +6,10 @@ def create_folder(path):
         os.makedirs(path)
 
 def multipath_channel(signal, fs, delay_set, gain_set, doppler_shift_range=(10, 1000)):
-    """
-    다중 경로 채널을 시뮬레이션
-    - signal: 입력 신호
-    - fs: 샘플링 주파수
-    - delay_set: 가능한 지연 값 배열 (초 단위)
-    - gain_set: 가능한 경로 감쇠 값 배열 (dB)
-    - doppler_shift_range: 도플러 주파수 범위 (Hz)
-    """
-    
     selected_delays = [0] + list(np.random.choice(delay_set, 5, replace=False))
     selected_gains = [0] + list(np.random.choice(gain_set, 5, replace=False))
 
-    doppler_shift = np.random.randint(doppler_shift_range[0], doppler_shift_range[1])
+    # doppler_shift = np.random.randint(doppler_shift_range[0], doppler_shift_range[1])
 
     filtered_signal = np.zeros_like(signal)
     
@@ -30,12 +21,9 @@ def multipath_channel(signal, fs, delay_set, gain_set, doppler_shift_range=(10, 
         if sample_delay < len(signal):
             delayed_signal[sample_delay:] = signal[:len(signal) - sample_delay]
         
-        # dB 단위의 이득을 선형 이득으로 변환
         linear_gain = 10 ** (gain / 20.0)
         
         filtered_signal += linear_gain * delayed_signal
-    
-    # 도플러 효과는 여기서는 생략했지만 필요 시 추가하면 됨
 
     return filtered_signal
 

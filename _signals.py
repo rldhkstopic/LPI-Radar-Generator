@@ -104,13 +104,6 @@ def type_P4(cpp, fs, A, fc, p):
     return s
 
 def type_T1(fs, A, fc, Nps, Ng):
-    """
-    - fs: 샘플링 주파수
-    - A: 진폭
-    - fc: 반송파 주파수
-    - Nps: 패턴의 샘플 수
-    - Ng: 패턴의 길이
-    """
     Ts = 1 / fs
     Tc = 1 / fc
     t = np.arange(0, Tc, Ts)

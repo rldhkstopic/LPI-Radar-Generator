@@ -105,7 +105,7 @@ for waveform_idx, waveform in enumerate(waveforms):
             p = np.random.choice([36, 49, 64])
             
             for fps_idx in range(fps):
-                wav = type_P3(Ncc, fs, A, fc[fps_idx], p)
+                wav = type_P3(cpp, fs, A, fc[fps_idx], p)
                 deployment(wav, snr, waveform, fps_idx)
 
         elif waveform == 'P4':
@@ -116,7 +116,7 @@ for waveform_idx, waveform in enumerate(waveforms):
             p = np.random.choice([36, 49, 64])
             
             for fps_idx in range(fps):
-                wav = type_P4(Ncc, fs, A, fc[fps_idx], p)
+                wav = type_P4(cpp, fs, A, fc[fps_idx], p)
                 deployment(wav, snr, waveform, fps_idx)
         elif waveform == 'T1':
             fc = np.linspace(fs/6, fs/5, fps)
