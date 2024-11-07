@@ -65,7 +65,3 @@ The STFT visualization of the power normalized noisy signal:
 1. **Set Parameters**: Modify the key parameters in the script to fit your requirements.
 2. **Generate Data**: Run the script to generate the radar signal data in the chosen directory.
 3. **Verify Data**: Use the STFT visualizations to verify that the signals are generated correctly, especially under low SNR conditions.
-
---- 
-
-This README layout provides a clear structure, making it easier to understand the data generation process, parameters, and verification steps.
